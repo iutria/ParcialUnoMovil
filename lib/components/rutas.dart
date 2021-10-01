@@ -1,3 +1,4 @@
+import 'package:apk_parcial/Procesos/acciones.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,8 @@ class Rutas extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 90.0),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          backgroundColor: const Color(0xFF151F21),
+          // backgroundColor: const Color(0xFF151F21),
+          backgroundColor: getColorPrimario(),
           elevation: 10.0),
     );
   }

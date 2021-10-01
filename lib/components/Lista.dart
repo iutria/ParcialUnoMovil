@@ -1,3 +1,4 @@
+import 'package:apk_parcial/Procesos/acciones.dart';
 import 'package:flutter/material.dart';
 
 class Lista extends StatelessWidget {
@@ -38,7 +39,7 @@ class Lista extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                       child: CircleAvatar(
-                        backgroundImage: NetworkImage(this.foto),
+                        backgroundImage: NetworkImage(this.foto.toString()),
                       ),
                     ),
                     Expanded(
@@ -63,7 +64,7 @@ class Lista extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Text(this.fechaNacimiento),
+                          Text(getFecha(this.fechaNacimiento)),
                           Text(this.edad)
                         ],
                       ),

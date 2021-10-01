@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'LORO',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        accentColor: Color(0xFF121E23),
       ),
       initialRoute: vistaprincipal.id,
       routes: {vistaprincipal.id: (context) => vistaprincipal()},

@@ -1,3 +1,4 @@
+import 'package:apk_parcial/Procesos/acciones.dart';
 import 'package:apk_parcial/Procesos/personas.dart';
 import 'package:apk_parcial/components/Agregar_Editar.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +16,9 @@ class Visualizar extends StatefulWidget {
 class _VisualizarState extends State<Visualizar> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return SafeArea(
+      // debugShowCheckedModeBanner: false,
+      child: Scaffold(
         appBar: AppBar(
           title: Row(
             children: <Widget>[
@@ -44,8 +45,8 @@ class _VisualizarState extends State<Visualizar> {
               Propiedades(widget.persona.nombre + " " + widget.persona.apellido,
                   "Nombre"),
               Propiedades(widget.persona.profesion, "Profesion"),
-              Propiedades(
-                  widget.persona.fechaNacimiento, "Fecha de nacimiento"),
+              Propiedades(getFecha(widget.persona.fechaNacimiento),
+                  "Fecha de nacimiento"),
               SizedBox(height: 20),
               OutlinedButton(
                 onPressed: () {
@@ -57,7 +58,9 @@ class _VisualizarState extends State<Visualizar> {
                     ),
                   ).then((resultado) //Espera por un Resultado
                       {
-                    _retornar(1, resultado);
+                    if (resultado != null) _retornar(1, resultado);
+                    //else
+                    // Navigator.pop(context, null);
                   });
                 },
                 child: Text(
